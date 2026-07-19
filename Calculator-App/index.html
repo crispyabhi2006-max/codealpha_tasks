@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Photography Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="topbar">
+      <span class="logo">Gallery</span>
+      <a class="topbar-link" href="#collection">View collection</a>
+    </nav>
+    <div class="hero-content">
+      <h1>A curated collection of<br>landscapes &amp; places.</h1>
+      <p>Browse, filter, and view photographs in full resolution.
+        Click any image to open it in the viewer.</p>
+    </div>
+  </header>
+
+  <section class="filter-section" id="collection">
+    <div class="filter-bar" id="filterBar" aria-label="Filter photographs by category">
+      <button class="filter-btn is-active" data-filter="all">All<span class="count" id="count-all"></span></button>
+      <button class="filter-btn" data-filter="mountain">Mountains<span class="count" id="count-mountain"></span></button>
+      <button class="filter-btn" data-filter="coast">Coast<span class="count" id="count-coast"></span></button>
+      <button class="filter-btn" data-filter="desert">Desert<span class="count" id="count-desert"></span></button>
+      <button class="filter-btn" data-filter="forest">Forest<span class="count" id="count-forest"></span></button>
+      <button class="filter-btn" data-filter="urban">Urban<span class="count" id="count-urban"></span></button>
+    </div>
+  </section>
+
+  <main class="gallery" id="gallery" aria-live="polite"></main>
+
+  <p class="empty-state" id="emptyState" hidden>No photographs match this filter yet.</p>
+
+  <footer class="site-foot">
+    <span>Gallery — a frontend project built with HTML, CSS and JavaScript.</span>
+  </footer>
+
+  <!-- Lightbox viewer -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="lb-progress" aria-hidden="true"><span id="lbProgressFill"></span></div>
+    <div class="lightbox-top">
+      <div class="lb-meta">
+        <span class="lb-title" id="lbTitle"></span>
+        <span class="lb-tag" id="lbTag"></span>
+      </div>
+      <button class="lb-close" id="lbClose" aria-label="Close viewer">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1L17 17M17 1L1 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <button class="lb-arrow lb-prev" id="lbPrev" aria-label="Previous photograph">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 16L6.5 10L12.5 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <figure class="lb-figure">
+      <img id="lbImage" src="" alt="">
+    </figure>
+
+    <button class="lb-arrow lb-next" id="lbNext" aria-label="Next photograph">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 4L13.5 10L7.5 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
